@@ -1,7 +1,7 @@
 function createRandomNumbers(qty) {
   const obj = {};
   for (let i = 0; i < qty; i++) {
-    const randomNumber = Math.floor(Math.random() * 1001);
+    const randomNumber = Math.floor(Math.random() * 100001);
     if (obj[randomNumber]) {
       obj[randomNumber] = obj[randomNumber] + 1;
     } else {

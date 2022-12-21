@@ -94,7 +94,8 @@ io.on('connection', async (socket) => {
 app.use('/', routes);
 
 if (clusterMode && process.isPrimary) {
-  const cpus = os.cpus().length;
+  // const cpus = os.cpus().length;
+  const cpus = 4;
   for (let i = 0; i < cpus; i++) {
     cluster.fork();
   }

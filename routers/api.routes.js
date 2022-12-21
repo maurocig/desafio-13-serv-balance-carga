@@ -1,10 +1,12 @@
 const express = require('express');
 const numberGenerator = require('../utils/numberGenerator.js');
 const { fork } = require('child_process');
+const argv = require('../utils/minimist');
 
 const router = express.Router();
 
 router.get('/random', (req, res) => {
+  console.log(`port => ${argv.port}`);
   const { qty = 100000000 } = req.query;
   const calc = fork('./utils/numberGenerator.js');
   calc.send(qty);
